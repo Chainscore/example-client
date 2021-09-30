@@ -1,2 +1,1 @@
-# scorer
 # example-client
