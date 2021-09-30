@@ -28,8 +28,6 @@ const publicKey = process.env.PUBLIC_KEY;
 
 // ask for tokens
 async function askForTokens() {
-    try{
-
     let tx;
 
     let bal = await scoreToken.methods.balanceOf(contract.options.address).call();
@@ -50,10 +48,6 @@ async function askForTokens() {
     await new Promise(r => setTimeout(r, 5000));
     balance = await exampleToken.methods.balanceOf(publicKey).call();
     console.log(`Balance on recieving tokens after Score verification: ${balance}`);
-
-    } catch (err){
-        console.log(err);
-    }
 }
 
 async function sendTransaction(tx, contract){
