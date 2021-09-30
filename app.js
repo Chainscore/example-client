@@ -10,17 +10,16 @@ require('dotenv').config();
 // const scoreTokenContract = require('../abis/ScoreToken.json');
 // const scoreProtocolContract = require('../abis/ScoreProtocol.json');
 
-const faucetContract = require('../score-contracts/build/contracts/MyFaucetDapp.json');
-const scoreTokenContract = require('../score-contracts/build/contracts/ScoreToken.json');
-const scoreProtocolContract = require('../score-contracts/build/contracts/ScoreProtocol.json');
-const ExampleTokenContract = require('../score-contracts/build/contracts/ExampleToken.json');
+const faucetContract = require('../contracts/build/contracts/MyFaucetDapp.json');
+const scoreTokenContract = require('../contracts/build/contracts/ScoreToken.json');
+const scoreProtocolContract = require('../contracts/build/contracts/ScoreProtocol.json');
+const ExampleTokenContract = require('../contracts/build/contracts/ExampleToken.json');
 
 
 const contract = new web3.eth.Contract(faucetContract.abi, faucetContract.networks['1666700000'].address);
 const scoreToken = new web3.eth.Contract(scoreTokenContract.abi, scoreTokenContract.networks['1666700000'].address);
 const scoreProtocol = new web3.eth.Contract(scoreProtocolContract.abi, scoreProtocolContract.networks['1666700000'].address);
 const exampleToken = new web3.eth.Contract(ExampleTokenContract.abi, ExampleTokenContract.networks['1666700000'].address);
-
 
 const privateKey = process.env.PRIVATE_KEY;
 const publicKey = process.env.PUBLIC_KEY;
